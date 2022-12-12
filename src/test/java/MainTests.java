@@ -3,7 +3,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainTests {
-    Main sut;
+    private Main sut;
 
     @BeforeEach
     public void init() {
