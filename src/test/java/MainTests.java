@@ -3,12 +3,12 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainTests {
-    private Main sut;
+    private static Main mainTest;
 
     @BeforeEach
     public void init() {
         System.out.println(" test started");
-        sut = new Main();
+        mainTest = new Main();
 
     }
 
@@ -21,7 +21,7 @@ public class MainTests {
 
     public void finished() {
         System.out.println("test completed");
-        sut = null;
+        mainTest = null;
 
     }
 
@@ -34,7 +34,7 @@ public class MainTests {
     public void testTaxEarningsMinusSpendings() {
         int earnings = 100, spending = 50, expected = 7;
 
-        int result = sut.taxEarningsMinusSpendings(earnings, spending);
+        int result = mainTest.taxEarningsMinusSpendings(earnings, spending);
 
         assertEquals(expected, result);
     }
@@ -44,7 +44,7 @@ public class MainTests {
 
         int earnings = 100, expected = 6;
 
-        int result = sut.taxEarnings(earnings);
+        int result = mainTest.taxEarnings(earnings);
 
         assertEquals(expected, result);
     }
@@ -52,7 +52,7 @@ public class MainTests {
     @Test
     public void testTaxEarningsMinusSpendings2() {
         int earnings = 50, spending = 1000, expected = 0;
-        int result = sut.taxEarningsMinusSpendings(earnings, spending);
+        int result = mainTest.taxEarningsMinusSpendings(earnings, spending);
         assertEquals(expected, result);
     }
 }
